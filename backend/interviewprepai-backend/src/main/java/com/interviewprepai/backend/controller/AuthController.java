@@ -1,0 +1,39 @@
+package com.interviewprepai.backend.controller;
+
+import com.interviewprepai.backend.dto.LoginRequest;
+import com.interviewprepai.backend.dto.RegisterRequest;
+import com.interviewprepai.backend.service.AuthService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.interviewprepai.backend.dto.AuthResponse;
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+
+public class AuthController {
+
+    private final AuthService authService;
+
+    // REGISTER API
+    @PostMapping("/register")
+    public ResponseEntity<AuthResponse> register(
+            @RequestBody RegisterRequest request
+    ) {
+
+        return ResponseEntity.ok(
+                authService.register(request)
+        );
+    }
+
+    // LOGIN API
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(
+            @RequestBody LoginRequest request
+    ) {
+
+        return ResponseEntity.ok(
+                authService.login(request)
+        );
+    }
+}
