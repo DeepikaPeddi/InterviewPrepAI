@@ -9,8 +9,6 @@ function DashboardPage() {
 
         const [dashboardData, setDashboardData]
             = useState(null);
-const [dashboardData, setDashboardData]
-    = useState(null);
 
 const [loading, setLoading]
     = useState(true);
