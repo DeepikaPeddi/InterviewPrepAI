@@ -2,8 +2,13 @@ import Sidebar from "../components/Sidebar";
 import { useEffect, useState } from "react";
 import api from "../api/axios";
 import toast from "react-hot-toast";
+import useMobile from "../hooks/useMobile";
 
 function DashboardPage() {
+    const isMobile = useMobile();
+
+        const [dashboardData, setDashboardData]
+            = useState(null);
 const [dashboardData, setDashboardData]
     = useState(null);
 
@@ -73,6 +78,9 @@ if (loading) {
         <div
             style={{
                 display: "flex",
+                flexDirection: isMobile
+                    ? "column"
+                    : "row",
                 background: "#f5f7fb",
                 minHeight: "100vh",
                 fontFamily: "Arial"
@@ -88,7 +96,9 @@ if (loading) {
             <div
                 style={{
                     flex: 1,
-                    padding: "35px"
+                    padding: isMobile
+                        ? "15px"
+                        : "35px"
                 }}
             >
 
@@ -108,7 +118,9 @@ if (loading) {
                     style={{
                         display: "grid",
                         gridTemplateColumns:
-                        "repeat(auto-fit, minmax(220px, 1fr))",
+                            isMobile
+                                ? "1fr"
+                                : "repeat(4, 1fr)",
                         gap: "20px",
                         marginBottom: "35px"
                     }}

@@ -20,12 +20,6 @@ body {
     }
 
 
-    /* all flex layouts */
-    div[style*="display: flex"] {
-        flex-direction: column !important;
-    }
-
-
     /* sidebar */
     div[style*="width: 240px"],
     div[style*="width:250px"] {
@@ -36,13 +30,7 @@ body {
     }
 
 
-    /* dashboard grid cards */
-    div[style*="grid-template-columns"] {
 
-        grid-template-columns:
-            1fr !important;
-
-    }
 
 
     /* cards */
