@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+
+    /* main page wrappers */
+    body > div {
+        width: 100%;
+    }
+
+
+    /* all flex layouts */
+    div[style*="display: flex"] {
+        flex-direction: column !important;
+    }
+
+
+    /* sidebar */
+    div[style*="width: 240px"],
+    div[style*="width:250px"] {
+
+        width: 100% !important;
+        height: auto !important;
+
+    }
+
+
+    /* dashboard grid cards */
+    div[style*="grid-template-columns"] {
+
+        grid-template-columns:
+            1fr !important;
+
+    }
+
+
+    /* cards */
+    div[style*="max-width"] {
+
+        max-width: 100% !important;
+
+    }
+
+
+    /* page padding */
+    div[style*="padding: 35px"] {
+
+        padding: 15px !important;
+
+    }
+
+
+    h1 {
+
+        font-size: 26px;
+
+    }
+
+
+    h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    button {
+
+        width: 100%;
+        margin-top: 10px;
+
+    }
+
+
+    textarea {
+
+        width: 100% !important;
+
+    }
+
+}
